@@ -16,15 +16,14 @@
 </style>
 </head>
 <body>
-<h1>Register here!</h1>
-<p>Fill in your name and email address, then click <strong>Submit</strong> to register.</p>
+<h1>Search here!</h1>
+    <p>Enter a name and/or email and/or company you wish to search for and then, click <strong>Submit</strong> to search.</p>
 <form method="post" action="index.php" enctype="multipart/form-data" >
-      Name  <input type="text" name="name" id="name"/></br>
+      Name <input type="text" name="name" id="name"/></br>
       Email <input type="text" name="email" id="email"/></br>
       Company Name <input type="text" name="company" id="company"/></br>
       <input type="submit" name="submit" value="Submit" />
 </form>
-<a href="search.php">Search the database</a></br>
 <?php
     // DB connection info
     //TODO: Update the values for $host, $user, $pwd, and $db
@@ -49,9 +48,9 @@
         $date = date("Y-m-d");
         $company = $_POST['company'];
 
-        // Insert data
-        $sql_insert = "INSERT INTO registration_tbl (name, email, date, company) 
-                   VALUES (?,?,?,?)";
+	/* // Insert data
+        $sql_insert = "INSERT INTO registration_tbl (name, email, date, company)
+VALUES (?,?,?,?)";
         $stmt = $conn->prepare($sql_insert);
         $stmt->bindValue(1, $name);
         $stmt->bindValue(2, $email);
@@ -63,11 +62,11 @@
         die(var_dump($e));
     }
     echo "<h3>Your're registered!</h3>";
-    }
+    }*/
     // Retrieve data
-    $sql_select = "SELECT * FROM registration_tbl";
+    $sql_select = "SELECT * FROM registration_tbl WHERE name=" $name;
     $stmt = $conn->query($sql_select);
-    $registrants = $stmt->fetchAll(); 
+    $registrants = $stmt->fetchAll();
     if(count($registrants) > 0) {
         echo "<h2>People who are registered:</h2>";
         echo "<table>";
