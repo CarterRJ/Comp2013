@@ -48,23 +48,15 @@
         $date = date("Y-m-d");
         $company = $_POST['company'];
 
-	/* // Insert data
-        $sql_insert = "INSERT INTO registration_tbl (name, email, date, company)
-VALUES (?,?,?,?)";
-        $stmt = $conn->prepare($sql_insert);
-        $stmt->bindValue(1, $name);
-        $stmt->bindValue(2, $email);
-        $stmt->bindValue(3, $date);
-        $stmt->bindValue(4, $company);
-        $stmt->execute();
     }
     catch(Exception $e) {
         die(var_dump($e));
     }
-    echo "<h3>Your're registered!</h3>";
-    }*/
+
+    }
+
     // Retrieve data
-    $sql_select = "SELECT * FROM registration_tbl WHERE name=" $name;
+    $sql_select = "SELECT * FROM registration_tbl WHERE name = Jon";
     $stmt = $conn->query($sql_select);
     $registrants = $stmt->fetchAll();
     if(count($registrants) > 0) {
