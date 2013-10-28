@@ -18,7 +18,7 @@
 <body>
 <h1>Search here!</h1>
     <p>Enter a name and/or email and/or company you wish to search for and then, click <strong>Submit</strong> to search.</p>
-<form method="post" action="index.php" enctype="multipart/form-data" >
+<form method="post" action="search.php" enctype="multipart/form-data" >
       Name <input type="text" name="name" id="name"/></br>
       Email <input type="text" name="email" id="email"/></br>
       Company Name <input type="text" name="company" id="company"/></br>
