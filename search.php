@@ -56,7 +56,7 @@
     }
 
     // Retrieve data
-    $sql_select = "SELECT * FROM registration_tbl WHERE name = Jon";
+    $sql_select = "SELECT * FROM registration_tbl WHERE name = "Jon"";
     $stmt = $conn->query($sql_select);
     $registrants = $stmt->fetchAll();
     if(count($registrants) > 0) {
