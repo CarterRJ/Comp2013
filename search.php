@@ -56,7 +56,7 @@
     }
 
     // Retrieve data
-    $sql_select = "SELECT * FROM registration_tbl WHERE name='".$name."'";
+    $sql_select = "SELECT * FROM registration_tbl WHERE name='Name'";
     $stmt = $conn->query($sql_select);
     $registrants = $stmt->fetchAll();
     if(count($registrants) > 0) {
@@ -74,7 +74,7 @@
         }
         echo "</table>";
     } else {
-        echo "<h3>No one is currently registered.</h3>";
+        echo "<h3>Your search did not match any records</h3>";
     }
 ?>
 </body>
