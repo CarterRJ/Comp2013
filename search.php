@@ -40,7 +40,7 @@
     catch(Exception $e){
         die(var_dump($e));
     }
-    // Insert registration info
+    // Capture form data
     if(!empty($_POST)) {
     try {
         $name = $_POST['name'];
