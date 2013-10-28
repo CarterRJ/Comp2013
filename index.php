@@ -28,10 +28,10 @@
     // DB connection info
     //TODO: Update the values for $host, $user, $pwd, and $db
     //using the values you retrieved earlier from the portal.
-    $host = "eu-cdbr-azure-north-b.cloudapp.net";
-    $user = "b7878b9b1e9748";
-    $pwd = "50883fe3";
-    $db = "carterrAt0XtOdIf";
+    $host = "value of Data Source";
+    $user = "value of User Id";
+    $pwd = "value of Password";
+    $db = "value of Database";
     // Connect to database.
     try {
         $conn = new PDO( "mysql:host=$host;dbname=$db", $user, $pwd);
@@ -46,7 +46,8 @@
         $name = $_POST['name'];
         $email = $_POST['email'];
         $date = date("Y-m-d");
-	$company = $_POST['company'};
+        $company = $_POST['company'];
+
         // Insert data
         $sql_insert = "INSERT INTO registration_tbl (name, email, date, company) 
                    VALUES (?,?,?,?)";
@@ -54,7 +55,7 @@
         $stmt->bindValue(1, $name);
         $stmt->bindValue(2, $email);
         $stmt->bindValue(3, $date);
-	$stmt->bindValue(4, $company);
+        $stmt->bindValue(4, $company);
         $stmt->execute();
     }
     catch(Exception $e) {
@@ -78,7 +79,6 @@
             echo "<td>".$registrant['email']."</td>";
             echo "<td>".$registrant['date']."</td>";
             echo "<td>".$registrant['company']."</td></tr>";
-
         }
         echo "</table>";
     } else {
