@@ -56,7 +56,7 @@
     }
 
     // Retrieve data
-    $sql_select = "SELECT * FROM registration_tbl WHERE name='{$name}' email='{$email}' date='{$date}' company='{$company}'";
+    $sql_select = "SELECT * FROM registration_tbl WHERE name='{$name}'OR email='{$email}' OR date='{$date}' OR company='{$company}'";
     $stmt = $conn->query($sql_select);
     $registrants = $stmt->fetchAll();
     if(count($registrants) > 0) {
