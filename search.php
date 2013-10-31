@@ -58,13 +58,12 @@
     // Retrieve data
     
 
-	 $sql_select = "SELECT (name, email, date, company) FROM registration_tbl WHERE name LIKE'%?%' AND email LIKE '%?%' AND company LIKE '%?%'";
+	 $sql_select = "SELECT (name, email, date, company) FROM registration_tbl WHERE name LIKE'%:name%' AND email LIKE '%:email%' AND company LIKE '%:company%'";
 
  $stmt = $conn->prepare($sql_select);
-        $stmt->bindValue(1, $name);
-        $stmt->bindValue(2, $email);
-        $stmt->bindValue(3, $date);
-	$stmt->bindValue(4, $company);
+ $stmt->bindValue(:name, $name);
+ $stmt->bindValue(:email, $email);
+ $stmt->bindValue(:company, $company);
         $stmt->execute();
 
     $stmt = $conn->query($sql_select);
