@@ -60,13 +60,13 @@
 
 	 $sql_select = "SELECT (name, email, date, company) FROM registration_tbl WHERE name LIKE'%:name%' AND email LIKE '%:email%' AND company LIKE '%:company%'";
 
- $stmt = $conn->prepare($sql_select);
+ $stmt = $conn->query($sql_select);
  $stmt->bindValue(:name, $name);
  $stmt->bindValue(:email, $email);
  $stmt->bindValue(:company, $company);
         $stmt->execute();
 
-    $stmt = $conn->query($sql_select);
+	// $stmt = $conn->query($sql_select);
     $registrants = $stmt->fetchAll();
 
     if(count($registrants) > 0) {
