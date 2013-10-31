@@ -58,7 +58,7 @@
     // Retrieve data
     
 
-	 $sql_select = "SELECT (name, email, company) FROM registration_tbl WHERE name LIKE'%?%' AND email LIKE '%?%' AND company LIKE '%?%'";
+	 $sql_select = "SELECT (name, email, company) FROM registration_tbl WHERE name LIKE'%{?}%' AND email LIKE '%{?}%' AND company LIKE '%{?}%'";
 
 	 $stmt->bindValue("1", $name);
 	 $stmt->bindValue("2", $email);
