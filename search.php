@@ -56,7 +56,15 @@
     }
 
     // Retrieve data
-    $sql_select = "SELECT * FROM registration_tbl WHERE name LIKE'%{$name}%' AND email LIKE '%{$email}%' AND company LIKE '%{$company}%'";
+    
+    $stmt->bindValue(1, $name);
+        $stmt->bindValue(2, $email);
+        $stmt->bindValue(3, $date);
+        $stmt->bindValue(4, $company);
+
+ $sql_select = "SELECT * FROM registration_tbl WHERE name LIKE'%{1}%' AND email LIKE '%{2}%' AND company LIKE '%{4}%'";
+
+	/* $sql_select = "SELECT * FROM registration_tbl WHERE name LIKE'%{$name}%' AND email LIKE '%{$email}%' AND company LIKE '%{$company}%'";*/
     $stmt = $conn->query($sql_select);
     $registrants = $stmt->fetchAll();
     if(count($registrants) > 0) {
