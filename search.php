@@ -62,8 +62,8 @@
 // AND email LIKE '%{$email}%' AND company LIKE '%{$company}%'";
     $stmt = $conn->prepare($sql_select);
 	 $stmt->bindValue(1, $name);
- $stmt->bindValue(2, $name);
- $stmt->bindValue(3, $name);
+ $stmt->bindValue(1, $email);
+ $stmt->bindValue(1, $company);
 	 $stmt->execute();
 
 
