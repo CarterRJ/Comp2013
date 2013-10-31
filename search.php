@@ -20,8 +20,8 @@
     <p>Enter a name and/or email and/or company you wish to search for and then, click <strong>Submit</strong> to search.</p>
 <form method="post" action="search.php" enctype="multipart/form-data" >
       Name <input type="text" name="name" id="name"/></br>
-      Email <input type="text" name="email" id="email"/></br>
-      Company Name <input type="text" name="company" id="company"/></br>
+      <!--Email <input type="text" name="email" id="email"/></br>
+      Company Name <input type="text" name="company" id="company"/></br>-->
       <input type="submit" name="submit" value="Submit" />
 </form>
 <?php
@@ -56,7 +56,8 @@
     }
 
     // Retrieve data
-    $sql_select = "SELECT * FROM registration_tbl WHERE name LIKE'{$name}%' OR email LIKE '{$email}%' OR date LIKE '{$date}%' OR company LIKE '{$company}%';";
+    $sql_select = "SELECT * FROM registration_tbl WHERE name LIKE'{$name}%' ";
+    //OR email LIKE '{$email}%' OR date LIKE '{$date}%' OR company LIKE '{$company}%'";
     $stmt = $conn->query($sql_select);
     $registrants = $stmt->fetchAll();
     if(count($registrants) > 0) {
