@@ -16,7 +16,7 @@
 </style>
 </head>
 <body>
-<h1>Search here!</h1>
+<h1>Search hgsgere!</h1>
 <a href = "index.php">Register...</a>
     <p>Enter a name and/or email and/or company you wish to search for and then, click <strong>Submit</strong> to search.</p>
 <form method="post" action="search.php" enctype="multipart/form-data" >
