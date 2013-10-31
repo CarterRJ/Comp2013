@@ -58,11 +58,12 @@
     // Retrieve data
     
 
-    $sql_select = "SELECT * FROM registration_tbl WHERE name LIKE CONCAT (',%,?,')";
+    $sql_select = "SELECT * FROM registration_tbl WHERE name LIKE CONCAT ('%',?,'%')";
     
 //AND email LIKE '%{$email}%' AND company LIKE '%{$company}%'";
 
 	 $stmt->bindValue("1", $name);
+	 $stmt->execute();
 
 
      $stmt = $conn->query($sql_select);
