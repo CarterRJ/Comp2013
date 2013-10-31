@@ -66,7 +66,7 @@
 	 $stmt->execute();
 
 
-     $stmt = $conn->query($sql_select);
+	 //$stmt = $conn->query($sql_select);
     $registrants = $stmt->fetchAll();
 
     if(count($registrants) > 0) {
