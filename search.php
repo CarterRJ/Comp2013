@@ -60,7 +60,7 @@
 
 	 $sql_select = "SELECT (name, email, date, company) FROM registration_tbl WHERE name LIKE'%?%' AND email LIKE '%?%' AND company LIKE '%?%'";
 
- $stmt = $conn->prepare($sql_insert);
+ $stmt = $conn->prepare($sql_select);
         $stmt->bindValue(1, $name);
         $stmt->bindValue(2, $email);
         $stmt->bindValue(3, $date);
