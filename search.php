@@ -56,7 +56,7 @@
     }
 
     // Retrieve data
-    $sql_select = "SELECT * FROM registration_tbl WHERE name LIKE'{$name}%' AND email LIKE '{$email}%' AND company LIKE '{$company}%'";
+    $sql_select = "SELECT * FROM registration_tbl WHERE name LIKE'%{$name}%' AND email LIKE '%{$email}%' AND company LIKE '%{$company}%'";
     $stmt = $conn->query($sql_select);
     $registrants = $stmt->fetchAll();
     if(count($registrants) > 0) {
